@@ -18,7 +18,7 @@ fi
 
 apt install postfix -y
 
-if [ $? ne 0 ]
+if [ $? -ne 0 ]
 then 
     echo "Error, installing packages"
     exit 2 
