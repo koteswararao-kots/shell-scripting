@@ -27,9 +27,10 @@ VALIDATE(){
     fi 
 }
 
+
 for i in $@ 
 do 
-    dpkg --list | grep $i >>$LOGFILE
+    apt list --installed | grep $i >>$LOGFILE
     if [ $? -ne 0 ]
     then 
         echo $i is not installed, lets install it
@@ -40,3 +41,6 @@ do
         echo "$Y $i is already installed"
     fi 
 done
+
+#sudo sh 12.looppackagesinstall.sh net-tools git
+#sudo apt remove net-tools
